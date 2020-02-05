@@ -89,7 +89,8 @@ footer {
     padding-bottom: 2px;
     padding-left: 5px;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;    
+    font-size: 12px;
+    margin-top: 10px;
 }
 
 footer a {
@@ -110,6 +111,9 @@ footer a {
 
 .card {
     background-color: var(--color-rocket);
+    display: grid;
+    align-items: center;
+    cursor: pointer;
 }
 
 .card__image-container img {
@@ -173,4 +177,20 @@ iframe {
     height: 90%;
     position: absolute;
     top: 5%;
+}
+
+/* === FEATURED ==== */
+
+.card__image-container {
+    position: relative;
+}
+
+.featured {
+    background: #f7d05f;
+    color: #111111;
+    padding: 2px 8px;
+    position: absolute;
+    right: 5px;
+    border-radius: 16px;
+    top: -2px;
 }

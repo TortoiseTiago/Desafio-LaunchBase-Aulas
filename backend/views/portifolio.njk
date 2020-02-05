@@ -1,94 +1,33 @@
 {% extends "layout.njk" %}
 
-
 {% block content %}
 
   <section class="cards">
 
-    <div class="card">
-      <div class="card__image-container">
-        <img
-          src="https://i.ytimg.com/vi/rAzHvYnQ8DY/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAIgBa-CHiEaph7FFR_Co30uGVFVw"
-          alt="video">
-      </div>
-      <div class="card__content">
-        <p>ARRAY: HIGH ORDER FUNCTIONS</p>
-      </div>
-      <div class="card__info">
-        <p>57min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+    {% for item in items %}
 
-    <div class="card">
-      <div class="card__image-container">
-        <img src="https://img.youtube.com/vi/0Y-x9PZDvQU/maxresdefault.jpg" alt="video">
-      </div>
-      <div class="card__content">
-        <p>AUTOMATIZE A ORDENAÇÃO DOS IMPORTS</p>
-      </div>
-      <div class="card__info">
-        <p>57min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+      <div class="card" id="{{item.id}}">
 
-    <div class="card">
-      <div class="card__image-container">
-        <img src="https://i.ytimg.com/vi/c7P03kkrEG8/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAvfzA0HzueU9dguj3SxXVRzcFJ-Q"
-          alt="video">
-      </div>
-      <div class="card__content">
-        <p>CONFIGURANDO VSCODE</p>
-      </div>
-      <div class="card__info">
-        <p>57min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+        <div class="card__image-container">
+          <img src="{{item.src}}" alt="Imagem de {{item.title}}">
+          {% if item.featured %}
+            <div class="featured">featured</div>
+          {% endif %}
+        </div>
 
-    <div class="card">
-      <div class="card__image-container">
-        <img src="https://i.ytimg.com/vi/7L7MhxjI4PE/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDpbR7poxpiYyk2hi7T1N9Wm8pyXQ"
-          alt="video">
-      </div>
-      <div class="card__content">
-        <p>REACT HOOKS</p>
-      </div>
-      <div class="card__info">
-        <p>57min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+        <div class="card__content">
+          <p>{{item.title}}</p>
+        </div>
 
-    <div class="card">
-      <div class="card__image-container">
-        <img src="https://i.ytimg.com/vi/Rt-xG_VzD6M/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBW3UDQimgMGq_FSxpS9Bz-y8_n-Q"
-          alt="video">
-      </div>
-      <div class="card__content">
-        <p>CLI DO ZERO NODE + GLUEGUN</p>
-      </div>
-      <div class="card__info">
-        <p>57min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+        <div class="card__info">
+          <p>{{item.duration}}</p>
+          <p class="card__price">{{item.price}}</p>
+        </div>
 
-    <div class="card">
-      <div class="card__image-container">
-        <img
-          src="https://i.ytimg.com/vi/y5Hv7pMA1uo/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLA_OTq52K3whiKgfozkohXBrvx--g"
-          alt="video">
       </div>
-      <div class="card__content">
-        <p>APP DO ZERO OFFLINE COM REALMDB</p>
-      </div>
-      <div class="card__info">
-        <p>57min</p>
-        <p class="card__price">Free</p>
-      </div>
-    </div>
+
+    {% endfor %}
+
   </section>
 
   <div class="modal-overlay">
@@ -105,6 +44,5 @@
   </div>
 
   <script src="scripts.js"></script>
-  
 
 {% endblock %}

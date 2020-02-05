@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+   <section class="cards">
+
+      <div class="card" id="{{item.id}}">
+
+         <div class="card__image-container">
+            <img src="{{item.src}}" alt="Imagem de {{item.title}}">
+            {% if item.featured %}
+               <div class="featured">featured</div>
+            {% endif %}
+         </div>
+
+         <div class="card__content">
+            <p>{{item.title}}</p>
+         </div>
+
+         <div class="card__info">
+            <p>{{item.duration}}</p>
+            <p class="card__price">{{item.price}}</p>
+         </div>
+
+      </div>
+
+   </section>
+
+{% endblock %}
